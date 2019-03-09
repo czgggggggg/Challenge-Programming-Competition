@@ -1,11 +1,11 @@
-//¶Ô0,1,2,..,n-1½øĞĞÈ«ÅÅÁĞ£¬²¢Êä³öËùÓĞµÄÅÅÁĞÇé¿ö¡£ 
-#include<iostream>
+//å¯¹0,1,2,..,n-1è¿›è¡Œå…¨æ’åˆ—ï¼Œå¹¶è¾“å‡ºæ‰€æœ‰çš„æ’åˆ—æƒ…å†µã€‚ 
+/*#include<iostream>
 using namespace std;
-const int MAX_N=100;                                    //ÎªÊ²Ã´È«¾Ö±äÁ¿¶¨ÒåÒ»¶¨ÒªÊ¹ÓÃconst¹Ø¼ü×Ö£¿ 
-bool used[MAX_N];//±ê¼ÇÒ»×éÊı¾İÖĞµÄÔªËØÊÇ·ñÒÑ¾­±»Ê¹ÓÃ     
-int perm[MAX_N];//Êı×é¼ÇÂ¼Ò»×éÈ«ÅÅÁĞ 
+const int MAX_N=100;                                    //ä¸ºä»€ä¹ˆå…¨å±€å˜é‡å®šä¹‰ä¸€å®šè¦ä½¿ç”¨constå…³é”®å­—ï¼Ÿ 
+bool used[MAX_N];//æ ‡è®°ä¸€ç»„æ•°æ®ä¸­çš„å…ƒç´ æ˜¯å¦å·²ç»è¢«ä½¿ç”¨     
+int perm[MAX_N];//æ•°ç»„è®°å½•ä¸€ç»„å…¨æ’åˆ— 
 
-void permutation1(int pos,int n){//ÔÚposÎ»ÖÃ·ÅÖÃÒ»¸öÃ»ÓĞÊ¹ÓÃµÄÔªËØ 
+void permutation1(int pos,int n){//åœ¨posä½ç½®æ”¾ç½®ä¸€ä¸ªæ²¡æœ‰ä½¿ç”¨çš„å…ƒç´  
 	if(pos==n){
 	    for(int i=0;i<n;i++){
 	    	cout<<perm[i]<<" ";
@@ -18,8 +18,8 @@ void permutation1(int pos,int n){//ÔÚposÎ»ÖÃ·ÅÖÃÒ»¸öÃ»ÓĞÊ¹ÓÃµÄÔªËØ
 		if(!used[i]){
 			perm[pos]=i;
 			used[i]=true;
-			permutation1(pos+1,n);//ÔÚposµÄÏÂÒ»¸öÎ»ÖÃÉèÖÃÒ»¸öÎ´Ê¹ÓÃµÄÔªËØ£¬×¢Òâ´ËÊ±iÒÑ¾­±»Ê¹ÓÃ¡£½ÓÏÂÀ´¼ÌĞøµ÷ÓÃpermutationº¯ÊıÊÇi±»Ê¹ÓÃµÄÇé¿öÏÂµÄ·ÖÖ§ 
-			used[i]=false;//Ê¹ÓÃºóÍË³ö£¬ÖØĞÂÉèÖÃÎªfalse  //±£Ö¤µ±Ç°iÊ¹ÓÃÆäËûµÄÔªËØ£¬¶øÔÚiÎªÆäËûÔªËØµÄ·ÖÖ§ÏÂ£¬µ±Ç°ÍË³öµÄÔªËØ»¹ÄÜÔÙ±»Ê¹ÓÃ¡£       
+			permutation1(pos+1,n);//åœ¨posçš„ä¸‹ä¸€ä¸ªä½ç½®è®¾ç½®ä¸€ä¸ªæœªä½¿ç”¨çš„å…ƒç´ ï¼Œæ³¨æ„æ­¤æ—¶iå·²ç»è¢«ä½¿ç”¨ã€‚æ¥ä¸‹æ¥ç»§ç»­è°ƒç”¨permutationå‡½æ•°æ˜¯iè¢«ä½¿ç”¨çš„æƒ…å†µä¸‹çš„åˆ†æ”¯ 
+			used[i]=false;//ä½¿ç”¨åé€€å‡ºï¼Œé‡æ–°è®¾ç½®ä¸ºfalse  //ä¿è¯å½“å‰iä½¿ç”¨å…¶ä»–çš„å…ƒç´ ï¼Œè€Œåœ¨iä¸ºå…¶ä»–å…ƒç´ çš„åˆ†æ”¯ä¸‹ï¼Œå½“å‰é€€å‡ºçš„å…ƒç´ è¿˜èƒ½å†è¢«ä½¿ç”¨ã€‚       
 		}
 	}
 }
@@ -31,5 +31,35 @@ int main(){
 		used[i]=false;
 	}
 	permutation1(0,n);
+	return 0;
+}*/
+
+
+//C++æ ‡å‡†åº“ä¸­æä¾›äº†next_permutation(array,array+n)å‡½æ•°ï¼Œå¯ä»¥å°†nä¸ªå…ƒç´ çš„n!ä¸­å…¨æ’åˆ—å…¨éƒ¨ç”Ÿæˆã€‚ 
+//next_permutationæ˜¯æŒ‰ç…§å­—å…¸é¡ºåºæ¥ç”Ÿæˆä¸‹ä¸€ä¸ªæ’åˆ—çš„ 
+#include<iostream>
+#include<algorithm>
+using namespace std;
+const int MAX_N=100;                                    //ä¸ºä»€ä¹ˆå…¨å±€å˜é‡å®šä¹‰ä¸€å®šè¦ä½¿ç”¨constå…³é”®å­—ï¼Ÿ 
+bool used[MAX_N];//æ ‡è®°ä¸€ç»„æ•°æ®ä¸­çš„å…ƒç´ æ˜¯å¦å·²ç»è¢«ä½¿ç”¨     
+int perm2[MAX_N];//æ•°ç»„è®°å½•ä¸€ç»„å…¨æ’åˆ—
+
+void permutation2(int n){
+	for(int i=0;i<n;i++){
+		perm2[i]=i;
+	}
+	do{
+		for(int i=0;i<n;i++){
+			cout<<perm2[i]<<" ";
+		}
+		cout<<endl;
+	}while(next_permutation(perm2,perm2+n));//æ‰€æœ‰çš„åºåˆ—éƒ½ç”Ÿæˆånext_permutationä¼šè¿”å›false 
+	return ;
+}
+
+int main(){
+	int n;
+	cin>>n;
+	permutation2(n);
 	return 0;
 }
